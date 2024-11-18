@@ -1,11 +1,11 @@
 #CONFIGURATION FOR SIMPLE NULL RESOURCE - DEV
 
 terraform {
-  source = "../../modules/null_resource"
+  source= "../../modules/null_resource"
 }
 
 inputs = {
-  environment = "dev"
+  environment= "dev"
 }
 
 #CONFIGURATION FOR CREATION AWS S# BUCKET - DEV
