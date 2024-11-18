@@ -11,5 +11,5 @@ resource "null_resource" "example" {
 }
 
 output "ensure_env" {
-  value = "Hello from ${var.environment}!"
+  value= "Hello from ${var.environment}!"
 }
