@@ -5,7 +5,7 @@ terraform {
 }
 
 inputs = {
-  environment= "dev"
+  environment= " dev"
 }
 
 #CONFIGURATION FOR CREATION AWS S# BUCKET - DEV
