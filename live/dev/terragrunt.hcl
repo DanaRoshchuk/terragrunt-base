@@ -1,7 +1,7 @@
 #CONFIGURATION FOR SIMPLE NULL RESOURCE - DEV
 
 terraform {
-  sources = "../../modules/null_resource"
+  source = "../../modules/null_resource"
 }
 
 inputs = {
