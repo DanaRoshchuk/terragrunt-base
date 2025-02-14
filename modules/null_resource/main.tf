@@ -11,7 +11,7 @@ data "scalr_current_account" "data_acc" {}
 
 data "scalr_environment" "data_env" {
 #account_id = data.scalr_current_account.data_acc
-  id = "env-ugnpuhbhe73a4e0"  # optional, can only use id or name for the environment filter, if both are used there will be a conflict.
+  id = "env-v0on0fdgvjdf8ljta"  # optional, can only use id or name for the environment filter, if both are used there will be a conflict.
 }
 
 
