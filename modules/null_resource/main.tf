@@ -3,7 +3,7 @@ terraform {
     required_providers {
         scalr = {
             source = "registry.scalr.io/scalr/scalr"
-            version= "2.1.1"
+            version= "3.8.0"
         }
     }
 }
@@ -11,11 +11,11 @@ data "scalr_current_account" "data_acc" {}
 
 data "scalr_environment" "data_env" {
 #account_id = data.scalr_current_account.data_acc
-  id = "env-v0oojr300u4k4oeg2"  # optional, can only use id or name for the environment filter, if both are used there will be a conflict.
+  id = "env-v0p0hnoi1nl08f2di"  # optional, can only use id or name for the environment filter, if both are used there will be a conflict.
 }
 
 
-resource "scalr_variable" "new_var" {
+resource "scalr_variable" "terraform_var" {
   count = 1
   key            = "var" #-${count.index}
   value          = "TRACE"
@@ -23,7 +23,7 @@ resource "scalr_variable" "new_var" {
   environment_id = data.scalr_environment.data_env.id
 }
 
-resource "scalr_variable" "var_new2" {
+resource "scalr_variable" "shell_new" {
   key            = "key1"
   value          = "1"
   category       = "shell"
