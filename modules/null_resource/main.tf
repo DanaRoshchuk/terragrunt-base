@@ -1,11 +1,24 @@
 
-terraform {
+/*terraform {
     required_providers {
         scalr = {
             source = "registry.scalr.io/scalr/scalr"
             version= "3.8.0"
         }
     }
+}*/
+
+terraform {
+  required_version = "1.12.1"
+
+  required_providers {
+    onepassword = {
+    }
+    scalr = {
+      source  = "scalr/scalr"
+      version = "3.16.4"
+    }
+  }
 }
 data "scalr_current_account" "data_acc" {}
 
@@ -46,7 +59,7 @@ output "ensure_env" {
   value = "Hello from ${var.environment}!"
 }
 
-
+/*
 # providers.tf
 
 # ---------------------------------------------------------------
@@ -71,4 +84,4 @@ resource "scalr_provider_configuration" "onepassword" {
     }
   }
 }
-
+*/
