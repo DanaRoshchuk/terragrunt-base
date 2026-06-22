@@ -15,7 +15,7 @@ terraform {
   # Scalr writes scalr_override.tf.json into the run working dir,
   # but OpenTofu executes from .terragrunt-cache/<hash>/repo-contents/
   # so the override file is never on OpenTofu's load path.
- source = "git::https://github.com/DanaRoshchuk/test-module-git2.git?ref=0.0.2"
+ source = "tfr://bohdana10.dana-master.testenv.scalr.dev/acc/module2/git"
 }
 
 # No generate "provider" block here — mirrors what the customer confirmed:
