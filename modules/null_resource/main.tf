@@ -26,6 +26,8 @@ terraform {
   }
 }
 
+provider "onepassword" {}
+
 # stacks_scalr/scalr/resources/main.tf
 
 # A minimal resource that forces onepassword provider initialisation
