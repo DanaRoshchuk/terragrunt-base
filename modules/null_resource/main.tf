@@ -26,7 +26,6 @@ terraform {
   }
 }
 
-provider "onepassword" {}
 
 # stacks_scalr/scalr/resources/main.tf
 
