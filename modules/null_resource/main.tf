@@ -47,3 +47,42 @@ output "ensure_env" {
 }
 
 
+# providers.tf
+
+terraform {
+  required_providers {
+    scalr = {
+      source  = "Scalr/scalr"
+      version = "~> 1.0"
+    }
+  }
+}
+
+provider "scalr" {
+  hostname = var.scalr_hostname
+  token    = var.scalr_token
+}
+
+# ---------------------------------------------------------------
+# 1Password provider configuration stored centrally in Scalr
+# Uses the `custom` block since onepassword is not a built-in type
+# ---------------------------------------------------------------
+resource "scalr_provider_configuration" "onepassword" {
+  name       = "onepassword"
+  account_id = var.scalr_account_id
+
+  # Share with all environments; restrict to specific env IDs if preferred
+  environments = ["*"]
+
+  # Scalr injects these arguments into the `onepassword` provider block at run time
+  custom {
+    provider_name = "onepassword"
+
+    argument {
+      name      = "service_account_token"
+      value     = var.op_service_account_token
+      sensitive = true
+    }
+  }
+}
+
