@@ -1,27 +1,27 @@
 #CONFIGURATION FOR SIMPLE NULL RESOURCE - DEV
 
-terraform {
+/*terraform {
   source = "../../modules/null_resource"
 }
 
 inputs = {
   environment = " dev"
-}
+}*/
 
 # repro/terragrunt.hcl
 
-/*terraform {
+terraform {
   # Remote source — this is the critical condition.
   # Scalr writes scalr_override.tf.json into the run working dir,
   # but OpenTofu executes from .terragrunt-cache/<hash>/repo-contents/
   # so the override file is never on OpenTofu's load path.
  source = "git::https://github.com/DanaRoshchuk/test-module-git2.git?ref=0.0.3" 
- #source = "tfr://bohdana10.danamaster.testenv.scalr.dev/acc/module2/git?version=8.126.2"
+ source = "tfr://bohdana10.danamaster.testenv.scalr.dev/acc/module2/git?version=8.126.2"
 }
 
 inputs = {
   environment = " dev"
-}*/
+}
 
 # No generate "provider" block here — mirrors what the customer confirmed:
 # Terragrunt does not emit the provider block when running on Scalr runners.
