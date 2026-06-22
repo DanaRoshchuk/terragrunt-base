@@ -49,20 +49,6 @@ output "ensure_env" {
 
 # providers.tf
 
-terraform {
-  required_providers {
-    scalr = {
-      source  = "Scalr/scalr"
-      version = "~> 1.0"
-    }
-  }
-}
-
-provider "scalr" {
-  hostname = var.scalr_hostname
-  token    = var.scalr_token
-}
-
 # ---------------------------------------------------------------
 # 1Password provider configuration stored centrally in Scalr
 # Uses the `custom` block since onepassword is not a built-in type
