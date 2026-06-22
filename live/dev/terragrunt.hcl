@@ -18,6 +18,10 @@ terraform {
  source = "tfr://registry.terraform.io/terraform-aws-modules/vpc/aws?version=5.1.0"
 }
 
+inputs = {
+  environment = " dev"
+}
+
 # No generate "provider" block here — mirrors what the customer confirmed:
 # Terragrunt does not emit the provider block when running on Scalr runners.
 
